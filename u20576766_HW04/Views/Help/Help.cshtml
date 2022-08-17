@@ -3,23 +3,33 @@
     ViewBag.Title = "Help";
 }
 <br />
-<div class="jumbotron" style="background-color:whitesmoke;">
-    <h3 class="place name" style="color:green;">How To Help</h3>
+<div class="jumbotron" style="background-image: url(https://serving.photos.photobox.com/95362608f5a3bdbe0e3c7f5d834669fabbccf3a9a28e2e0f39a177d3fc19e0659329e2ec.jpg); background-size: cover; ">
+    <h3 class="place name" style="color:white;">How To Help</h3>
 </div>
 <br />
 <br />
-<br />
+<div class="place">
+    <img style="width: 350px; height: 300px; border: 10px double forestgreen;border-radius:300px;" src="~/Media/Volunteer/volu2.jpg" />
+    &nbsp;
+    &nbsp;
+    <img style="width: 290px; height: 300px; border: 10px double forestgreen; border-radius: 300px;" src="~/Media/Volunteer/volu3.jpg" />
+    &nbsp;
+    &nbsp;
+    <img style="width: 350px; height: 300px; border: 10px double forestgreen; border-radius: 300px;" src="~/Media/Volunteer/volu1.jpg" />
+</div>
+<br/>
+<br/>
 <div class="row">
     <div class="col-md">
         <div class="container place">
             <h3 class="place" style="color:forestgreen;">Want To Make A Dfference?</h3>&nbsp;
             <p>
-                PURPOSE offers a wide range of volunteering positions that go by the field based on the qualification and experience. Some positions
+                PURPOSE offers a wide range of volunteering positions that go by field and also based on the qualification and experience that a volunteer has. Some positions
                 requires a substantial amount of specific experience, such as being a caretaker volunteer would need experience or a history in marine animal caretaking.
-                All volunteer have a place in our foundation and we aim to educate, train and place them in the field we feel bests suits them.<br />
+                All volunteers have a place in our foundation and we aim to educate, train and place them in the field we feel bests suits them.<br />
 
                 We encourage people who are interested to apply and we will go through their application and get back to them as soon as possible. We values people's time and make sure to
-                create a place where they have space to to do what they need with plenty of time. Volunteering is not a job, it is a kindness. We will work with you
+                create a place where they have space to do what they need with plenty of time. Volunteering is not a job, it is a kindness. We will work with you
                 to establish a timeline and schedule to best suit the time you wish to volunteer.<br />
 
                 Please do not be afraid to contact us and talk to us about anything in terms of the foundation.
@@ -119,7 +129,7 @@
         var skill = Request["Skills"];
         var com = Request["fmess"];
 
-        var volunteer = name + " " + surname + ", " + email + ", ( " + phone + " )" + Environment.NewLine + city + ", " + skill + Environment.NewLine + com + Environment.NewLine + Environment.NewLine;
+        var volunteer = "Name: " + name + Environment.NewLine + "Surname: " + surname + Environment.NewLine + "Email: " + email + Environment.NewLine + "Phone Number: ( " + phone + " )" + Environment.NewLine + "City: " + city + Environment.NewLine + "Skills: " + skill + Environment.NewLine + Environment.NewLine + com + Environment.NewLine + Environment.NewLine;
         var volu = Server.MapPath("~/Media/Volunteer/Volunteers.txt");
         File.AppendAllText(volu, volunteer);
     }

@@ -150,7 +150,9 @@
     <Content Include="Media\Images\protect.png" />
     <Content Include="Media\Images\save.png" />
     <Content Include="Media\Images\sdg.png" />
-    <Content Include="Views\Help\volunteer.jpg" />
+    <Content Include="Media\Volunteer\volu1.jpg" />
+    <Content Include="Media\Volunteer\volu2.jpg" />
+    <Content Include="Media\Volunteer\volu3.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -256,6 +258,7 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Views\Help\jumbo.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -289,7 +292,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Media\Newsletter\" />
     <Folder Include="Media\Queries\" />
-    <Folder Include="Media\Volunteer\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
