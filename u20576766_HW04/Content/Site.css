@@ -1,0 +1,123 @@
+﻿body {
+    padding-top: 50px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.look {
+    font-family: "Perpetua";
+    font-size:40px;
+}
+
+.exp{
+    font-size:medium;
+    padding:10px;
+    font-weight:normal;
+}
+
+.place{
+    text-align:center;
+}
+
+.social{
+    float:inline-start;
+    width: 20px;
+    height:15px;
+}
+
+.name {
+    font-size: 72px;
+}
+
+.opt1 {
+    background-color: Highlight;
+    color: white;
+    border-radius: 100px;
+    border-top-left-radius: 200px;
+    border-top-right-radius: 200px;
+    padding: 70px;
+    border: solid white 5px;
+}
+
+.opt2 {
+    background-color: goldenrod;
+    color: white;
+    border-radius: 100px;
+    border-bottom-left-radius: 200px;
+    border-bottom-right-radius: 200px;
+    padding: 70px;
+    border: solid white 5px;
+}
+
+.opt3 {
+    background-color: green;
+    color: white;
+    border-radius: 100px;
+    border-top-left-radius: 200px;
+    border-top-right-radius: 200px;
+    padding: 70px;
+    border: solid white 5px;
+}
+
+.padding {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.news {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.blocks{
+    padding-bottom:50px;
+}
+
+.social{
+    width:30px;
+    height:30px;
+}
+
+.socialTag {
+    padding:30px;
+}
+
+.navItems{
+    text-decoration:none;
+    text-decoration-line:none;
+    cursor:pointer;
+}
+
+.vl{
+    border-left:0.5px solid grey;
+}
+
+.cont{
+    background-color:turquoise;
+    padding:20px;
+}
+/*
+.navItems:hover{
+    background-color:powderblue;
+    border-radius:5px;
+    color:white;
+    font-weight:bold;
+}*/

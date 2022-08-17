@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header" style="float:inline-start">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapseNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                @Html.ActionLink("PURPOSE", "Index", "Home", new { area = "" }, new { @class = "navbar-brand look font-weight-bold" })
+            </div>
+            <div class="navbar-collapse collapse" id="collapseNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item active nav-link navbar-text">
+                        <a style="text-decoration:none;cursor:pointer;"  href="https://localhost:44321/Home/Index">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item active nav-link navbar-text">
+                        <a style="text-decoration:none;cursor:pointer;" href="https://localhost:44321/Aim/Aim">
+                            Process & Aim
+                        </a>
+                    </li>
+                    <li class="nav-item active nav-link navbar-text">
+                        <a style="text-decoration:none;cursor:pointer;" href="https://localhost:44321/Help/Help">
+                            How To Help
+                        </a>
+                    </li>
+                    <li class="nav-item active nav-link navbar-text">
+                        <a style="text-decoration:none;cursor:pointer;" href="https://localhost:44321/About/About">
+                            About Purpose
+                        </a>
+                    </li>
+                    <li class="nav-item active nav-link navbar-text">
+                        <a style="text-decoration:none;cursor:pointer;" href="https://localhost:44321/Merchandise/Merchandise">
+                            Merchandise
+                        </a>
+                    </li>
+                    <li class="nav-item active nav-link navbar-text">
+                        <a  style="text-decoration:none;cursor:pointer;" href="https://localhost:44321/Contact/Contact">
+                            Contact Us
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <form class="form-inline justify-content-end">
+                <a class="btn btn-primary" type="button" href="https://localhost:44321/Help/Help">
+                    Volunteer
+                </a>
+                <p>&nbsp; &nbsp;</p>
+                <a class="btn btn-primary" type="button" href="https://localhost:44321/Donate/Donate">
+                    Donate
+                </a>
+            </form>
+
+
+        </div>
+    </div>
+    <div class="container-fluid body-content">
+        @RenderBody()
+        <footer style="padding: 40px; border-radius: 10px;">
+            <div class="socialTag place">
+                <hr style="width:50%;" />
+                <a style="text-decoration:none;" class="place" href="https://twitter.com/" target="_blank">
+                    <img class="social" src="https://cdn-icons-png.flaticon.com/128/356/356076.png" />&nbsp; &nbsp; &nbsp;
+                </a>
+                <a style="text-decoration:none;" class="place" href="https://www.instagram.com/" target="_blank">
+                    <img class="social" src="https://cdn-icons-png.flaticon.com/128/356/356077.png" />&nbsp; &nbsp; &nbsp;
+                </a>
+                <a style="text-decoration:none;" class="place" href="https://www.youtube.com/" target="_blank">
+                    <img class="social" src="https://cdn-icons-png.flaticon.com/128/7209/7209684.png" />&nbsp; &nbsp; &nbsp;
+                </a>
+                <a style="text-decoration:none;" class="place" href="https://www.facebook.com/" target="_blank">
+                    <img class="social" src="https://cdn-icons-png.flaticon.com/128/4406/4406234.png" />&nbsp; &nbsp; &nbsp;
+                </a>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <form method="post">
+                        <h6 class="place">Subscribe To Our Newsletter</h6>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" autocomplete="off" placeholder="Enter Name" name="subName" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" autocomplete="off" placeholder="Enter Email" name="subEmail" class="form-control" required />
+                        </div>
+                        <input type="submit" name="sEmail" value="Subscribe" class="btn btn-dark"/>
+                    </form>
+                </div>
+                <div class="col place">
+                    <h6>Beneficiaries</h6>
+                    Sanlam<br />
+                    Nedbank<br />
+                    Momentum<br />
+                    Bonita <br />
+                    Thirst
+                </div>
+                <div class="col place">
+                    <h6>Our Times</h6>
+                    Mon, Wed & Thu (8h45 - 16h45) <br />
+                    Tue & Fri (9h00 - 15h00) <br />
+                    Sat (9h00 - 14h00) <br />
+                    Sun & Public Holidays (CLOSED)
+                </div>
+                <div class="col place">
+                    <h6>Contact Us</h6>
+                    <a style="text-decoration:none;" href="https://www.maps.google.com" target="_blank">
+                        134 Davidson Rd, Smithsville, Pretoria
+                    </a>
+                    <br />
+                    <a style="text-decoration:none;" href="mailto:lifebelow.water@purpose.co.za" target="_blank">
+                        lifebelow.water@purpose.co.za
+                    </a> <br />
+                    <label id="telPhone" onclick="copyText()" data-toggle="tooltip" data-placement="bottom" title="Copy">
+                        +27 (12) 377 8001
+                    </label>
+                </div>
+            </div>
+            <p class="place" style="padding-top:5px;">PURPOSE is a Non Profit Organization &copy; @DateTime.Now.Year</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <script>
+        function copyText() {
+            var number = document.getElementById("telPhone");
+            number.select();
+            navigator.clipboard.writeText(number);
+
+            alert("Copied");
+        }
+    </script>
+</body>
+</html>
+
+@{
+
+    if (IsPost )
+    {
+        var name = Request["subName"];
+        var email = Request["subEmail"];
+
+        var sub = name + "," + email + Environment.NewLine;
+        var file = Server.MapPath("~/Media/Newsletter/Newsletters.txt");
+        File.AppendAllText(file, sub);
+    }
+
+}

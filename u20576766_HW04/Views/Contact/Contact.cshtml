@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "Contact Us";
+}
+<br />
+<br />
+<h1 style="padding-left: 5px; text-align: center; color: #3498DB;">Contact Us</h1>
+<hr class="place" style="width:80%" />
+<br />
+<div class="row" style="padding-bottom:100px;">
+    <div class="col-md-7 padding" style="padding-top:60px;padding-left:80px;padding-bottom:10px;">
+        <div class="place">
+            <p class="padding place" style="font-family:Garamond;">
+                If you'd like to get to know our foundation more. Below provided is our physical address, if you wish to make a visit in person.
+                Our email address and our telephone line. We encourage you reach out and be involved in our work if you wish to assist.<br />We'd like to hear from you.
+            </p>
+        </div>
+        &nbsp;
+        <div class="place" style="background-color: #B0E3E6; padding:60px;border-radius:15px;">
+            <a style="text-decoration:none;" href="https://www.maps.google.com" target="_blank">
+                134 Davidson Rd, Smithsville, Pretoria
+            </a>
+            <br />
+            <a style="text-decoration:none;" href="mailto:lifebelow.water@purpose.co.za" target="_blank">
+                lifebelow.water@purpose.co.za
+            </a> <br />
+            <label id="telPhone" onclick="copyText()" data-toggle="tooltip" data-placement="bottom" title="Copy">
+                +27 (12) 377 8001
+            </label>
+        </div>
+    </div>
+    &nbsp;
+    &nbsp;
+    <div class="col-sm-4" style="padding-top: 10px; border-bottom: 60px;padding-left:40px; ">
+        <h6 style="text-align:center;">Send Us Your Queries</h6>
+        &nbsp;
+        <form method="post">
+            <table>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="fname">First Name</label>
+                            <input type="text" autocomplete="off" placeholder="John" name="fname" class="form-control" required />
+                        </div>
+                    </td>
+                    <td>
+                        <p>&nbsp;</p>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label for="flast">Last Name</label>
+                            <input type="text" autocomplete="off" placeholder="Doe" name="flast" class="form-control" required />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <div class="form-group">
+                <label for="fname">Email</label>
+                <input type="email" autocomplete="off" placeholder="email@example.com" name="eMail" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label for="fmess">Message</label>
+                <textarea type="text" autocomplete="off" placeholder="Hello" name="fmess" class="form-control" required rows="6" ></textarea>
+            </div>
+            <input type="submit" value="Send" class="btn btn-primary" />
+        </form>
+    </div>
+</div>
+
+@{ 
+    if (IsPost)
+    {
+        var fname = Request["fname"];
+        var lname = Request["flast"];
+        var mail = Request["eMail"];
+        var message = Request["fmess"];
+
+        var query = lname + " ," + fname + " (" + mail + ")" + Environment.NewLine + message + Environment.NewLine + Environment.NewLine;
+        var comment = Server.MapPath("~/Media/Queries/Queries.txt");
+        File.AppendAllText(comment, query);
+
+    }
+}
+

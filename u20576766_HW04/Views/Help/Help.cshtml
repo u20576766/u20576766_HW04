@@ -1,0 +1,126 @@
+﻿
+@{
+    ViewBag.Title = "Help";
+}
+<br />
+<div class="jumbotron" style="background-color:whitesmoke;">
+    <h3 class="place name" style="color:green;">How To Help</h3>
+</div>
+<br />
+<br />
+<br />
+<div class="row">
+    <div class="col-md">
+        <div class="container place">
+            <h3 class="place" style="color:forestgreen;">Want To Make A Dfference?</h3>&nbsp;
+            <p>
+                PURPOSE offers a wide range of volunteering positions that go by the field based on the qualification and experience. Some positions
+                requires a substantial amount of specific experience, such as being a caretaker volunteer would need experience or a history in marine animal caretaking.
+                All volunteer have a place in our foundation and we aim to educate, train and place them in the field we feel bests suits them.<br />
+
+                We encourage people who are interested to apply and we will go through their application and get back to them as soon as possible. We values people's time and make sure to
+                create a place where they have space to to do what they need with plenty of time. Volunteering is not a job, it is a kindness. We will work with you
+                to establish a timeline and schedule to best suit the time you wish to volunteer.<br />
+
+                Please do not be afraid to contact us and talk to us about anything in terms of the foundation.
+            </p>
+        </div>
+    </div>
+    <div class="col-md">
+        <div class="container">
+            <h3>Sign Up To Volunteer</h3>
+            <div>
+                <form method="post">
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" autocomplete="off" placeholder="Jane" name="name" class="form-control" required />
+                                </div>
+                            </td>
+                            <td>
+                                <p>&nbsp;</p>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <label for="surname">Surname</label>
+                                    <input type="text" autocomplete="off" placeholder="Doe" name="surname" class="form-control" required />
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="form-group">
+                                    <label for="fname">Email</label>
+                                    <input type="email" autocomplete="off" placeholder="email@example.com" name="eMail" class="form-control" required />
+                                </div>
+                            </td>
+                            <td>
+                                <p>&nbsp;</p>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <label for="city">City/Town</label>
+                                    <input type="text" autocomplete="off" placeholder="Durban" name="city" class="form-control" required />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-group">
+                                    <label for="cel">Phone Number</label>
+                                    <input type="tel" autocomplete="off" placeholder="081 000 0101" name="cell" class="form-control" required />
+                                </div>
+                            </td>
+                            <td>
+                                <p>&nbsp;</p>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <label>Skills: </label>
+                                    <select name="Skills" class="form-control">
+                                        <option value="IT">IT</option>
+                                        <option value="Biology">Biology</option>
+                                        <option value="Caretaking">Caretaking</option>
+                                        <option value="Office Admin">Office Admin</option>
+                                        <option value="Vetenarian">Vetenarian</option>
+                                        <option value="Other">Others</option>
+                                        <option value="None">Willing To Gain Some</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="form-group">
+                        <label>Comment:</label>
+                        <textarea autocomplete="off" placeholder="Hello" name="fmess" class="form-control" rows="4"></textarea>
+                    </div>
+                    <input type="submit" value="Sign Up!" class="btn btn-success place" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+@{
+    if (IsPost)
+    {
+        var name = Request["name"];
+        var surname = Request["surname"];
+        var email = Request["eMail"];
+        var city = Request["city"];
+        var phone = Request["cell"];
+        var skill = Request["Skills"];
+        var com = Request["fmess"];
+
+        var volunteer = name + " " + surname + ", " + email + ", ( " + phone + " )" + Environment.NewLine + city + ", " + skill + Environment.NewLine + com + Environment.NewLine + Environment.NewLine;
+        var volu = Server.MapPath("~/Media/Volunteer/Volunteers.txt");
+        File.AppendAllText(volu, volunteer);
+    }
+}
