@@ -1,0 +1,8 @@
+Name: Tammy
+Surname: Jones
+Pet Name: Pepper  Species: Turtle
+Email: jonesT@gmail.com
+Phone Number: ( 096 337 7680 )
+Physical Address: 1019 Turner St, Jacaranda Court, Hatfield, Pretoria, South Africa
+Adoption Donation Type: Monthly
+

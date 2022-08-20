@@ -1,4 +1,6 @@
-﻿@{
+﻿@using u20576766_HW04.Models;
+@model IEnumerable<u20576766_HW04.Models.Filemedia>
+@{
     ViewBag.Title = "Home";
 }
 
@@ -127,7 +129,7 @@
     <div class="col place opt1">
         <h4>EDUCATION</h4>
         <p>
-            At Purpose we pride ourselve in being informed about what we do and how to do it correctly and efficiently.
+            At WWF we pride ourselve in being informed about what we do and how to do it correctly and efficiently.
             There are certain criteria for certain positions, but we make sure there is a place for every one.
         </p>
         <p><a class="btn btn-outline-light" href="https://localhost:44321/Aim/Aim">Learn more &raquo;</a></p>
@@ -135,20 +137,39 @@
     <div class="col place opt2">
         <h4>TRAINING</h4>
         <p>
-            Where you are fully trained for a 6 month period on the processes and methods used at Purpose so you can have the skill to work in the field.
+            Where you are fully trained for a 6 month period on the processes and methods used at WWF so you can have the skill to work in the field.
         </p>
         <p><a class="btn btn-outline-light" href="https://localhost:44321/Aim/Aim">Learn more &raquo;</a></p>
     </div>
     <div class="col place opt3">
         <h4>FIELD</h4>
-        <p>You can easily find a place and passion of your own at Purpose once you have been informed of all the different potions you can contribute in.</p>
+        <p>You can easily find a place and passion of your own at WWF once you have been informed of all the different potions you can contribute in.</p>
         <p><a class="btn btn-outline-light" href="https://localhost:44321/Aim/Aim">Learn more &raquo;</a></p>
     </div>
 </div>
 <br />
+<br />
+
+<div class=" container place">
+    <h3>Use Case Narrative & Class Diagram</h3>
+    <br />
+    <div class="card-columns">
+        @foreach (var Filemedia in Model)
+        {
+            <div class="card">
+                <a class="gallery" href="~/Media/Adopt/@Filemedia.FileName">
+                    <img class="card-img-top card-img" src="~/Media/UseCaseNarr/@Filemedia.FileName" />
+                </a>
+            </div>
+        }
+    </div>
+</div>
+
+<br />
+<br />
 <div class="place">
     <h6>Interested in buying our merch?</h6>
-    <h6>Visit our <a href="https://localhost:44321/Merchandise/Merchandise">Merchandise</a> page or go visit one of our local offices.</h6>
+    <h6>Visit our <a href="https://localhost:44321/Merchandise/Merchandise">Shop</a> page or go visit one of our local offices.</h6>
 </div>
 
 

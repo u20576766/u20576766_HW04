@@ -1,8 +1,298 @@
 ﻿
 @{
     ViewBag.Title = "Donate";
-}
-<br />
-<br />
-<h2>Donate</h2>
 
+
+}
+<div class="container" style="background-color:thistle;border-radius:20px;padding:20px;">
+    <br />
+    <br />
+
+    <h1 style="padding-left: 5px; text-align: center; color: rebeccapurple;">Donation</h1>
+    <hr class="place" style="width:80%;color:darkmagenta;" />
+    <br />
+    <br />
+
+    <div class="place">
+        <h2>Make A Donation Today!</h2>
+        <p>
+            You can protect threatened species and their habitats today with a monthly donation to World Wildlife Fund. Your support of WWF's global conservation
+            work will make a world of difference. When you make a monthly donation, you'll join our special group of WWF Heroes (monthly members) and enjoy these benefits. A monthly gift of $85+ makes
+            you a Partner in Conservation.
+        </p>
+    </div>
+    <br />
+    <div class="container">
+        <h6 class="place">Enter your name and surname to retrieve your adoption form details</h6>
+        <div class="row" style="padding-bottom:100px;">
+            <div class="col" style="padding-top: 10px; border-bottom: 60px;padding-left:40px; ">
+                <h3>Adoption Donation</h3>
+                <br />
+                <form method="post">
+                    <div class="form-group">
+                        <label for="name">First Name</label>
+                        <input type="text" autocomplete="off" placeholder="Jane" name="first" class="form-control" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="last">Last Name</label>
+                        <input type="text" autocomplete="off" placeholder="Doe" name="last" class="form-control" required />
+                    </div>
+                    <input type="submit" value="Retrieve Form" class="btn btn-info" />
+                </form>
+            </div>
+
+            <div class="col padding" style="padding-top:60px;padding-left:80px;padding-bottom:10px;">
+                @{ if (IsPost)
+                    {
+                        var name = Request["first"];
+                        var surname = Request["last"];
+                        Array client = null;
+                        var adopter = Server.MapPath("~/Media/AdoptForm/" + name + " " + surname + ".txt");
+
+                        var exMessage = "An Adoption form under " + name + " " + surname + " does not exist";
+
+                        if (!File.Exists(adopter))
+                        {
+                            <h4 class="place">@exMessage</h4>
+                        }
+
+                        else
+                        {
+                            client = File.ReadAllLines(adopter);
+                            foreach (string dataLine in client)
+                            {
+                                <p style="font-size:smaller;">@dataLine</p>
+                            }
+                        }
+                    }
+
+
+                }
+            </div>
+        </div>
+    </div>
+    <hr class="place" style="width:100%;color:darkmagenta;" />
+    <div class="container">
+        <h1>Donor Information</h1>
+        <form method="post">
+            <table>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="name">First Name</label>
+                            <input type="text" autocomplete="off" placeholder="Jane" name="firstName" class="form-control" required />
+                        </div>
+                    </td>
+                    <td>
+                        <p>&nbsp;</p>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label for="name">Last Name</label>
+                            <input type="text" autocomplete="off" placeholder="Smith" name="lastName" class="form-control" required />
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="name">Address</label>
+                            <input type="text" autocomplete="off" placeholder="0001 Lambda St" name="address" class="form-control" required />
+                        </div>
+                    </td>
+                    <td>
+                        <p>&nbsp;</p>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label for="name">City</label>
+                            <input type="text" autocomplete="off" placeholder="Sandton" name="cty" class="form-control" required />
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="name">Zip</label>
+                            <input type="text" autocomplete="off" placeholder="0028" name="zip" class="form-control" required />
+                        </div>
+                    </td>
+                    <td>
+                        <p>&nbsp;</p>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label for="name">State/Province</label>
+                            <input type="text" autocomplete="off" placeholder="Gauteng" name="prov" class="form-control" required />
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="name">Country</label>
+                            <input type="text" autocomplete="off" placeholder="South Africa" name="country" class="form-control" required />
+                        </div>
+                    </td>
+                    <td>
+                        <p>&nbsp;</p>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label for="name">E-mail</label>
+                            <input type="email" autocomplete="off" placeholder="email@example.com" name="Email" class="form-control" required />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <br />
+            <h1>Payment Information</h1>
+            <table>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label>Donation Type: </label>
+                            <select name="doType" class="form-control">
+                                <option value="Adoption Monthly">Adoption Monthly [R300]</option>
+                                <option value="Donation Monthly">Donation Monthly [R300]</option>
+                                <option value="Adoption Once-Off">Adoption Once-Off [R1 610]</option>
+                                <option value="Donation Once-Off">Donation Once-Off R [1 810]</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td>
+                        <p>&nbsp;</p>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label>Payment Type: </label>
+                            <select name="payType" class="form-control">
+                                <option value="Visa">Visa</option>
+                                <option value="Bank Account">Bank Account</option>
+                                <option value="PayPal">PayPal</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="ccn">Card Number:</label>
+                            <input id="ccn" type="tel" inputmode="numeric" class="form-control" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx">
+                        </div>
+                    </td>
+                    <td>
+                        <p>&nbsp;</p>
+                    </td>
+                    <td>
+                        <div class="form-group" sy>
+                            <label>Expiry Date: </label>
+                            <select name="epMonth" class="form-control">
+                                <option value='01'>01</option>
+                                <option value='02'>02</option>
+                                <option value='03'>03</option>
+                                <option value='04'>04</option>
+                                <option value='05'>05</option>
+                                <option value='06'>06</option>
+                                <option value='07'>07</option>
+                                <option value='08'>08</option>
+                                <option value='09'>09</option>
+                                <option value='10'>10</option>
+                                <option value='11'>11</option>
+                                <option value='12'>12</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td>
+                        <label> </label>
+                        <p>/</p>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label> </label>
+                            <select name='epYear' class="form-control">
+                                <option value='22'>2022</option>
+                                <option value='22'>2023</option>
+                                <option value='24'>2024</option>
+                                <option value='25'>2025</option>
+                                <option value='26'>2026</option>
+                                <option value='27'>2027</option>
+                                <option value='28'>2028</option>
+                                <option value='29'>2029</option>
+                                <option value='30'>2030</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="cvv">CVV Number:</label>
+                            <input id="cvv" type="tel" inputmode="numeric" class="form-control" autocomplete="cc-number" maxlength="3" placeholder="xxx">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" value="Pay" class="btn btn-success" />
+        </form>
+    </div>
+</div>
+
+
+
+@{ if (IsPost)
+    {
+        var donType = Request["dType"];
+
+        if (donType == "Adoption Monthly [R300]")
+        {
+            var name = Request["firstName"];
+            var surname = Request["lastName"];
+
+            var payment = "Successful payment of R300 p.m!";
+            var adopt = Server.MapPath("~/Media/AdoptForm/" + name + " " + surname + ".txt");
+            File.AppendAllText(adopt,payment);
+        }
+        else if (donType == "Adoption Once-Off [R1 610]")
+        {
+            var name = Request["firstName"];
+            var surname = Request["lastName"];
+
+            var payment = "Successful payment of R1 610 once off!";
+            var adopt = Server.MapPath("~/Media/AdoptForm/" + name + " " + surname + ".txt");
+            File.AppendAllText(adopt, payment);
+        }
+        else if (donType == "Donation Once-Off [R1 810]")
+        {
+            var name = Request["firstName"];
+            var surname = Request["lastName"];
+            var address = Request["adress"];
+            var city = Request["cty"];
+            var zipCode = Request["zip"];
+            var state = Request["prov"];
+            var country = Request["country"];
+            var mail = Request["mail"];
+
+            var adop = "Name: " + name + Environment.NewLine + "Surname: " + surname + Environment.NewLine + "Address: " + address + Environment.NewLine + "City: " + city + Environment.NewLine + "State/Province: " + state + Environment.NewLine + "Zip Code: " + zipCode + Environment.NewLine + "Email: " + mail + Environment.NewLine +"Successful payment of R1 810 once off!"+ Environment.NewLine;
+            var adopt = Server.MapPath("~/Media/Donate/" + name + " " + surname + ".txt");
+            File.AppendAllText(adopt, adop);
+        }
+        else
+        {
+            var name = Request["firstName"];
+            var surname = Request["lastName"];
+            var address = Request["adress"];
+            var city = Request["cty"];
+            var zipCode = Request["zip"];
+            var state = Request["prov"];
+            var country = Request["country"];
+            var mail = Request["mail"];
+
+            var adop = "Name: " + name + Environment.NewLine + "Surname: " + surname + Environment.NewLine + "Address: " + address + Environment.NewLine + "City: " + city + Environment.NewLine + "State/Province: " + state + Environment.NewLine + "Zip Code: " + zipCode + Environment.NewLine + "Email: " + mail + Environment.NewLine + "Successful payment of R300 p.m!" + Environment.NewLine;
+            var adopt = Server.MapPath("~/Media/Donate/" + name + " " + surname + ".txt");
+            File.AppendAllText(adopt, adop);
+        }
+    }
+}

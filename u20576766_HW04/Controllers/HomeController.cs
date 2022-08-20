@@ -12,7 +12,13 @@ namespace u20576766_HW04.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            string[] fileDirectory = Directory.GetFiles(Server.MapPath("~/Media/UseCaseNarr/"));
+            List<Filemedia> files = new List<Filemedia>();
+            foreach (string filePath in fileDirectory)
+            {
+                files.Add(new Filemedia { FileName = Path.GetFileName(filePath) });
+            }
+            return View(files);
         }
 
         public ActionResult Adopt()

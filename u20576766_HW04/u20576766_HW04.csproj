@@ -168,6 +168,11 @@
     <Content Include="Media\Images\protect.png" />
     <Content Include="Media\Images\save.png" />
     <Content Include="Media\Images\sdg.png" />
+    <Content Include="Media\UseCaseNarr\adoption.png" />
+    <Content Include="Media\UseCaseNarr\donate.png" />
+    <Content Include="Media\UseCaseNarr\newsletter.png" />
+    <Content Include="Media\UseCaseNarr\Shop Class Diagram.png" />
+    <Content Include="Media\UseCaseNarr\volunteer.png" />
     <Content Include="Media\Volunteer\volu1.jpg" />
     <Content Include="Media\Volunteer\volu2.jpg" />
     <Content Include="Media\Volunteer\volu3.jpg" />
@@ -310,6 +315,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Media\AdoptForm\" />
+    <Folder Include="Media\Donate\" />
     <Folder Include="Media\Newsletter\" />
     <Folder Include="Media\Queries\" />
   </ItemGroup>
