@@ -132,6 +132,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Filemedia.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -143,7 +144,24 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Media\AdCarousel\Beluga.png" />
+    <Content Include="Media\AdCarousel\Clownfish.png" />
+    <Content Include="Media\AdCarousel\Dolphin.png" />
+    <Content Include="Media\AdCarousel\Goldfish.png" />
+    <Content Include="Media\AdCarousel\Otter.png" />
+    <Content Include="Media\AdCarousel\Penguin.png" />
+    <Content Include="Media\AdCarousel\Shark.png" />
+    <Content Include="Media\AdCarousel\Turtle.png" />
+    <Content Include="Media\Adopt\beluge_whale.jpg" />
+    <Content Include="Media\Adopt\dolphin.jpg" />
+    <Content Include="Media\Adopt\fish.jpg" />
+    <Content Include="Media\Adopt\goldfish.jpg" />
+    <Content Include="Media\Adopt\otter.jpg" />
+    <Content Include="Media\Adopt\penguin.jpg" />
+    <Content Include="Media\Adopt\shark.jpg" />
+    <Content Include="Media\Adopt\turtle.jpg" />
     <Content Include="Media\Images\e.jpg" />
+    <Content Include="Media\Images\fish.jpg" />
     <Content Include="Media\Images\g.jpg" />
     <Content Include="Media\Images\h.jpg" />
     <Content Include="Media\Images\nurture.png" />
@@ -288,12 +306,12 @@
     <Content Include="Views\Merchandise\Merchandise.cshtml" />
     <Content Include="Views\Contact\Contact.cshtml" />
     <Content Include="Views\Donate\Donate.cshtml" />
+    <Content Include="Views\Home\Adopt.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Media\Newsletter\" />
     <Folder Include="Media\Queries\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
