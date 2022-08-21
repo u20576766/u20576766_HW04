@@ -227,7 +227,7 @@
                 </td>
             </tr>
         </table>
-        <a  class="btn btn-success" href="https://localhost:44321/Donate/Donate">Pay Donation</a>
+        <input type="submit" class="btn btn-success" onclick="https://localhost:44321/Donate/Donate" value="Pay Donation" />
     </form>
 </div>
 <script>
@@ -246,7 +246,7 @@
         var species = Request["Species"];
         var type = Request["donType"];
 
-        var adopter = "Name: " + name + Environment.NewLine + "Surname: " + surname + Environment.NewLine + "Pet Name: " + pet + "  Species: " + species + Environment.NewLine + "Email: " + email + Environment.NewLine + "Phone Number: ( " + phone + " )" + Environment.NewLine + "Physical Address: " + phy + Environment.NewLine + "Adoption Donation Type: " + type + Environment.NewLine + Environment.NewLine;
+        var adopter = name + Environment.NewLine + surname + Environment.NewLine + pet + Environment.NewLine + species + Environment.NewLine +  email + Environment.NewLine  + phone + Environment.NewLine + phy + Environment.NewLine +  type + Environment.NewLine + Environment.NewLine;
         var add = Server.MapPath("~/Media/AdoptForm/" + name + " " + surname + ".txt");
         File.AppendAllText(add, adopter);
     }

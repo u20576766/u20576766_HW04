@@ -133,6 +133,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Filemedia.cs" />
+    <Compile Include="Models\HatViewModel.cs" />
+    <Compile Include="Models\HoodieViewModel.cs" />
+    <Compile Include="Models\Merchandise.cs" />
+    <Compile Include="Models\TopViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -168,6 +172,18 @@
     <Content Include="Media\Images\protect.png" />
     <Content Include="Media\Images\save.png" />
     <Content Include="Media\Images\sdg.png" />
+    <Content Include="Media\Merch\1.png" />
+    <Content Include="Media\Merch\2.png" />
+    <Content Include="Media\Merch\3.png" />
+    <Content Include="Media\Merch\Hats\1.png" />
+    <Content Include="Media\Merch\Hats\2.png" />
+    <Content Include="Media\Merch\Hats\3.png" />
+    <Content Include="Media\Merch\Hoodies\1.png" />
+    <Content Include="Media\Merch\Hoodies\2.png" />
+    <Content Include="Media\Merch\Hoodies\3.png" />
+    <Content Include="Media\Merch\Tops\t1.jpg" />
+    <Content Include="Media\Merch\Tops\t2.jpg" />
+    <Content Include="Media\Merch\Tops\t3.jpg" />
     <Content Include="Media\UseCaseNarr\adoption.png" />
     <Content Include="Media\UseCaseNarr\donate.png" />
     <Content Include="Media\UseCaseNarr\newsletter.png" />

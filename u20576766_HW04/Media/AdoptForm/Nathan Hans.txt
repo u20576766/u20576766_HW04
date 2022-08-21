@@ -1,8 +1,0 @@
-Name: Nathan
-Surname: Hans
-Pet Name: Zack  Species: Shark
-Email: hansolo@gmail.com
-Phone Number: ( 027 879 7313 )
-Physical Address: 0001 Lambda St, Waterkloof, Pretoria Hatfield
-Adoption Donation Type: Once-Off
-

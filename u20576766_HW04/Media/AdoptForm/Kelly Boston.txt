@@ -1,8 +1,0 @@
-Name: Kelly
-Surname: Boston
-Pet Name: Ryan  Species: Beluga Whale
-Email: bostonkelly@gmail.com
-Phone Number: ( 098 837  7156 )
-Physical Address: 0000 Crown Street, Giveon, Durban
-Adoption Donation Type: Monthly
-

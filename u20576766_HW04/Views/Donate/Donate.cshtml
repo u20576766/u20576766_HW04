@@ -36,7 +36,7 @@
 
                     <div class="form-group">
                         <label for="last">Last Name</label>
-                        <input type="text" autocomplete="off" placeholder="Doe" name="last" class="form-control" required />
+                        <input type="text" autocomplete="off"  placeholder="Doe" name="last" class="form-control" required />
                     </div>
                     <input type="submit" value="Retrieve Form" class="btn btn-info" />
                 </form>
@@ -63,7 +63,9 @@
                             foreach (string dataLine in client)
                             {
                                 <p style="font-size:smaller;">@dataLine</p>
+
                             }
+
                         }
                     }
 
@@ -81,7 +83,7 @@
                     <td>
                         <div class="form-group">
                             <label for="name">First Name</label>
-                            <input type="text" autocomplete="off" placeholder="Jane" name="firstName" class="form-control" required />
+                            <input type="text" autocomplete="off" id="firstname" value="@Request["first"]" placeholder="Jane" name="firstName" class="form-control" required />
                         </div>
                     </td>
                     <td>
@@ -90,7 +92,7 @@
                     <td>
                         <div class="form-group">
                             <label for="name">Last Name</label>
-                            <input type="text" autocomplete="off" placeholder="Smith" name="lastName" class="form-control" required />
+                            <input type="text" autocomplete="off" value="@Request["last"]" placeholder="Smith" name="lastName" class="form-control" required />
                         </div>
                     </td>
                 </tr>
